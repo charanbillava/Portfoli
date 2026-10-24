@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="https://charanbillava.github.io/Portfoli/">
   <meta name="theme-color" content="#050505">
   <meta name="description" content="The design portfolio of Charan Billava — UI/UX, branding and graphic design.">
   <title>Charan Billava — Designer Portfolio</title>
@@ -14,16 +15,19 @@
     body::before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px),radial-gradient(ellipse at 50% 16%,#a4161118,transparent 44%); background-size:clamp(56px,6vw,92px) clamp(56px,6vw,92px),clamp(56px,6vw,92px) clamp(56px,6vw,92px),auto; mask-image:linear-gradient(to bottom,#000 0%,#000 55%,transparent 100%); animation:grid-drift 38s linear infinite; }
     @keyframes grid-drift { to { background-position:0 92px,92px 0,center; } }
     a { color:inherit; }
-    .site-header { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:72px; padding:12px clamp(18px,4vw,64px); background:rgba(5,5,5,.94); border-bottom:1px solid #242424; backdrop-filter:blur(14px); }
+    .site-header { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; gap:clamp(18px,3vw,42px); min-height:76px; padding:12px clamp(18px,4vw,64px); background:rgba(7,7,7,.78); border-bottom:1px solid #ffffff12; box-shadow:0 10px 32px #0005; backdrop-filter:blur(20px) saturate(1.2); }
     .site-header::after { content:""; position:absolute; left:0; bottom:-1px; width:var(--page-progress,0%); height:2px; background:var(--red); box-shadow:0 0 14px #f1261d66; transition:width .1s linear; }
-    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; letter-spacing:.13em; font-size:12px; text-transform:uppercase; white-space:nowrap; }
-    .brand-mark { width:9px; height:9px; border-radius:50%; background:var(--red); box-shadow:0 0 14px #f1261d88; animation:mark-pulse 2.8s ease-in-out infinite; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:700; letter-spacing:.16em; font-size:11px; color:#f5f2ed; text-transform:uppercase; white-space:nowrap; }
+    .brand-mark { width:9px; height:9px; border-radius:2px; background:var(--red); box-shadow:0 0 14px #f1261d88; transform:rotate(45deg); animation:mark-pulse 2.8s ease-in-out infinite; }
     @keyframes mark-pulse { 50% { box-shadow:0 0 22px #f1261dcc; } }
-    nav { display:flex; align-items:center; gap:clamp(8px,2vw,26px); overflow-x:auto; scrollbar-width:none; }
+    nav { display:flex; flex:0 1 auto; align-items:center; justify-content:flex-end; gap:clamp(1px,.35vw,5px); max-width:100%; padding:4px; overflow-x:auto; border:1px solid #ffffff16; border-radius:999px; background:linear-gradient(135deg,#ffffff0a,#ffffff03); box-shadow:inset 0 1px #ffffff0a,0 5px 20px #0004; scrollbar-width:none; overscroll-behavior-inline:contain; }
     nav::-webkit-scrollbar { display:none; }
-    nav a { text-decoration:none; text-transform:uppercase; font-size:10px; letter-spacing:.12em; color:#aaa; padding:10px 0; white-space:nowrap; transition:color .2s; }
-    nav a:hover, nav a[aria-current="location"] { color:#fff; }
-    nav a[aria-current="location"]::after { content:''; display:block; height:2px; margin-top:6px; background:var(--red); }
+    nav a { display:inline-flex; align-items:center; min-height:34px; padding:0 clamp(9px,1vw,14px); border:1px solid transparent; border-radius:999px; text-decoration:none; text-transform:uppercase; font-size:9px; font-weight:600; letter-spacing:.1em; color:#aaa8a5; white-space:nowrap; transition:color .22s,background .22s,border-color .22s,transform .22s,box-shadow .22s; }
+    nav a:hover { color:#fff; background:#ffffff0c; border-color:#ffffff15; transform:translateY(-1px); }
+    nav a[aria-current="location"] { color:#fff; background:linear-gradient(135deg,#f1261d2c,#ffffff09); border-color:#f1261d55; box-shadow:inset 0 1px #ffffff12,0 0 18px #f1261d12; }
+    nav a[aria-current="location"]::after { content:none; }
+    nav a.resume-nav { color:#fff; background:var(--red); border-color:#ff6b60; box-shadow:0 4px 18px #f1261d3d,inset 0 1px #ffffff45; }
+    nav a.resume-nav:hover { color:#fff; background:#ff392f; border-color:#ff867e; box-shadow:0 6px 22px #f1261d59; }
     main { width:min(100%, 1920px); margin-inline:auto; padding:0 clamp(12px,2.2vw,36px) 50px; }
     .chapter { padding-top:clamp(52px,8vw,112px); scroll-margin-top:72px; }
     .chapter-heading { display:flex; align-items:end; justify-content:space-between; gap:24px; padding:0 clamp(4px,1vw,16px) 18px; }
@@ -32,19 +36,30 @@
     h1 { font-size:clamp(40px,8vw,118px); line-height:.9; }
     h2 { font-size:clamp(34px,5.2vw,72px); line-height:.95; }
     .chapter-note { max-width:360px; margin:0; color:#aeadab; font-size:13px; line-height:1.65; text-align:right; }
-    .slide { position:relative; margin:0; width:100%; overflow:hidden; background:#080808; border:1px solid #242424; cursor:zoom-in; transition:transform .45s cubic-bezier(.2,.75,.25,1),border-color .35s,box-shadow .45s; }
-    .slide::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:0; background:linear-gradient(135deg,#f1261d12,transparent 40%,#ffffff08); transition:opacity .35s; }
+    .slide { position:relative; margin:0; width:100%; aspect-ratio:16/9; overflow:hidden; background:#080808; border:1px solid #242424; cursor:zoom-in; transition:transform .45s cubic-bezier(.2,.75,.25,1),border-color .35s,box-shadow .45s; }
+    .slide::after { content:""; position:absolute; z-index:2; inset:0; pointer-events:none; opacity:0; background:linear-gradient(135deg,#f1261d12,transparent 40%,#ffffff08); transition:opacity .35s; }
     .slide:hover { transform:translateY(-3px); border-color:#71302d; box-shadow:0 20px 54px #0009,0 0 0 1px #f1261d1c; }
     .slide:hover::after { opacity:1; }
-    .slide img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; background:#050505; transition:transform .7s cubic-bezier(.2,.75,.25,1); }
+    .slide img { position:relative; z-index:1; display:block; width:100%; height:100%; object-fit:cover; background:#050505; transition:transform .7s cubic-bezier(.2,.75,.25,1); }
     .slide:hover img { transform:scale(1.012); }
-    .slide figcaption { position:absolute; right:12px; bottom:12px; padding:7px 10px; border:1px solid #ffffff30; border-radius:999px; color:#eee; background:#0009; font-size:9px; letter-spacing:.1em; text-transform:uppercase; opacity:0; transform:translateY(4px); transition:opacity .2s, transform .2s; }
+    .slide figcaption { position:absolute; z-index:3; right:12px; bottom:12px; display:flex; align-items:center; gap:10px; padding:7px 10px; border:1px solid #ffffff30; border-radius:999px; color:#eee; background:#0009; font-size:9px; letter-spacing:.1em; text-transform:uppercase; opacity:0; transform:translateY(4px); transition:opacity .2s, transform .2s; }
+    .slide-project figcaption { opacity:1; transform:none; }
+    .slide-project-link { padding-left:10px; border-left:1px solid #ffffff40; color:#ff8179; font-weight:700; text-decoration:none; white-space:nowrap; transition:color .2s; }
+    .slide-project-link:hover { color:#fff; }
     .slide:hover figcaption, .slide:focus-within figcaption { opacity:1; transform:none; }
     .slide:focus-visible { outline:2px solid var(--red); outline-offset:4px; }
-    .intro { position:relative; min-height:calc(100svh - 72px); display:grid; align-content:center; padding-top:22px; }
-    .intro::before { content:""; position:absolute; z-index:-1; top:16%; left:50%; width:min(66vw,900px); aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:#c51b1511; filter:blur(90px); pointer-events:none; }
-    .intro .slide { border-color:#333; animation:hero-enter .9s cubic-bezier(.2,.75,.25,1) both; }
-    @keyframes hero-enter { from { opacity:0; transform:translateY(18px) scale(.99); } to { opacity:1; transform:translateY(0) scale(1); } }
+    .intro { position:relative; width:calc(100% + 2 * clamp(12px,2.2vw,36px)); margin-inline:calc(-1 * clamp(12px,2.2vw,36px)); min-height:calc(100svh - 72px); display:grid; align-content:center; padding-top:22px; }
+    .intro::before { content:""; position:absolute; z-index:-1; top:16%; left:50%; width:min(66vw,900px); aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:#c51b1511; filter:blur(90px); pointer-events:none; animation:hero-glow 5.8s ease-in-out 1.5s infinite; }
+    @keyframes hero-glow { 0%,100% { opacity:.55; transform:translateX(-50%) scale(.92); } 50% { opacity:1; transform:translateX(-50%) scale(1.07); } }
+    .intro .slide { border-color:#333; transform-origin:center; animation:hero-enter 1.35s cubic-bezier(.34,1.56,.64,1) 120ms both; }
+    .intro .slide::before { content:""; position:absolute; z-index:2; top:-35%; bottom:-35%; left:-24%; width:18%; pointer-events:none; opacity:0; background:linear-gradient(90deg,transparent,#ffffff75,transparent); transform:translateX(-220%) rotate(14deg); animation:hero-sweep 1.15s ease-out 1.28s both; }
+    @keyframes hero-sweep { 18% { opacity:.75; } 100% { opacity:0; transform:translateX(850%) rotate(14deg); } }
+    @keyframes hero-enter {
+      0% { opacity:0; transform:translate3d(0,110vh,0) scale(.84) rotate(3deg); }
+      58% { opacity:1; transform:translate3d(0,-22px,0) scale(1.02) rotate(-.7deg); }
+      79% { transform:translate3d(0,8px,0) scale(.997) rotate(.2deg); }
+      100% { opacity:1; transform:translate3d(0,0,0) scale(1) rotate(0); }
+    }
     .chapter-grid { display:grid; grid-template-columns:1fr; gap:clamp(18px,3vw,40px); }
     .chapter-grid.two { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .chapter-grid.three { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -53,21 +68,46 @@
     .video-card:hover { transform:translateY(-3px); border-color:#71302d; box-shadow:0 20px 54px #0009,0 0 0 1px #f1261d1c; }
     .video-card video { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:#050505; }
     .video-card figcaption { position:absolute; right:12px; bottom:12px; padding:7px 10px; border:1px solid #ffffff30; border-radius:999px; color:#eee; background:#0009; font-size:9px; letter-spacing:.1em; text-transform:uppercase; pointer-events:none; }
-    .about-card { display:grid; grid-template-columns:minmax(250px,.78fr) minmax(0,1.5fr); overflow:hidden; color:#111; background:#eeece9; border:1px solid #292929; }
-    .about-portrait { position:relative; min-height:440px; display:grid; place-items:end center; overflow:hidden; background:#101010; }
-    .about-portrait::before { content:''; position:absolute; inset:0; opacity:.48; background-image:linear-gradient(#474747 1px,transparent 1px),linear-gradient(90deg,#474747 1px,transparent 1px); background-size:64px 64px; }
+    .about-card { display:grid; grid-template-columns:minmax(250px,.78fr) minmax(0,1.5fr); overflow:hidden; color:var(--paper); background:linear-gradient(125deg,#171312 0%,#0c0c0c 72%); border:1px solid #3d2b29; border-radius:12px; }
+    .about-portrait { position:relative; min-height:440px; display:grid; place-items:end center; overflow:hidden; background:radial-gradient(ellipse at 50% 80%,#f1261d2b,transparent 55%),#101010; }
+    .about-portrait::before { content:''; position:absolute; inset:0; opacity:.32; background-image:linear-gradient(#5c4542 1px,transparent 1px),linear-gradient(90deg,#5c4542 1px,transparent 1px); background-size:64px 64px; mask-image:linear-gradient(to bottom,#000,transparent 92%); }
     .about-portrait img { position:relative; display:block; width:100%; max-height:600px; object-fit:contain; object-position:center bottom; }
-    .about-content { padding:clamp(24px,4vw,58px); }
+    .about-content { display:flex; flex-direction:column; justify-content:center; gap:4px; padding:clamp(28px,4.5vw,64px); }
     .about-content h3 { margin:0 0 16px; font:400 clamp(30px,4vw,58px)/1.05 var(--display); letter-spacing:-.04em; }
-    .about-content > p:not(.eyebrow) { max-width:760px; margin:0; color:#383634; font-size:clamp(14px,1.25vw,18px); line-height:1.75; }
+    .about-content > p:not(.eyebrow) { max-width:760px; margin:0; color:#c3bcb7; font-size:clamp(14px,1.25vw,18px); line-height:1.75; }
     .about-content .eyebrow { margin:0 0 12px; color:var(--red); font-size:10px; letter-spacing:.2em; text-transform:uppercase; }
-    .about-details { display:grid; grid-template-columns:1fr auto; gap:26px; align-items:end; margin-top:clamp(28px,4vw,56px); padding-top:22px; border-top:1px solid #c9c5c0; }
+    .about-details { display:grid; grid-template-columns:1fr auto; gap:26px; align-items:end; margin-top:clamp(28px,4vw,56px); padding-top:22px; border-top:1px solid #ffffff24; }
     .about-details h4 { margin:0 0 12px; font:400 25px/1.1 var(--display); }
     .education { display:grid; gap:8px; color:#e34a27; font-size:13px; line-height:1.5; }
     .tools { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; max-width:310px; }
-    .tool { display:grid; place-items:center; width:55px; height:55px; padding:5px; overflow:hidden; border:1px solid #d5d1cc; border-radius:12px; background:#fff; }
+    .tool { display:grid; place-items:center; width:55px; height:55px; padding:5px; overflow:hidden; border:1px solid #ffffff2a; border-radius:12px; background:#f5f2ed; }
     .tool img { display:block; width:100%; height:100%; object-fit:contain; }
-    .about-tools-label { grid-column:2; margin-top:-15px !important; color:#777 !important; font-size:10px !important; letter-spacing:.12em; text-align:right; text-transform:uppercase; }
+    .about-tools-label { grid-column:2; margin-top:-15px !important; color:#9a9996 !important; font-size:10px !important; letter-spacing:.12em; text-align:right; text-transform:uppercase; }
+    .practice-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(12px,1.8vw,24px); }
+    .practice-card { position:relative; display:flex; min-height:310px; flex-direction:column; align-items:flex-start; overflow:hidden; padding:clamp(22px,3vw,38px); border:1px solid #332725; border-radius:10px; background:linear-gradient(145deg,#151211 0%,#0b0b0b 72%); transition:transform .4s cubic-bezier(.2,.75,.25,1),border-color .35s,box-shadow .4s; }
+    .practice-card::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.7; background:radial-gradient(circle at var(--spot-x,50%) var(--spot-y,50%),#f1261d1c,transparent 52%); transition:opacity .35s; }
+    .practice-card::after { content:''; position:absolute; right:0; bottom:0; left:0; height:2px; background:var(--red); transform:scaleX(0); transform-origin:left; transition:transform .45s cubic-bezier(.2,.75,.25,1); }
+    .practice-card-top { position:relative; z-index:1; display:flex; width:100%; justify-content:space-between; align-items:center; margin-bottom:clamp(28px,4vw,54px); }
+    .practice-index { color:#e2dcd6; font:400 clamp(25px,3vw,38px)/1 var(--display); }
+    .practice-card .eyebrow { position:relative; z-index:1; margin-bottom:12px; font-size:9px; }
+    .practice-card h3 { position:relative; z-index:1; margin:0 0 14px; font:400 clamp(27px,3vw,42px)/.98 var(--display); letter-spacing:-.035em; }
+    .practice-card h3 em { color:#e4aaa4; font-weight:400; }
+    .practice-card > p:not(.eyebrow) { position:relative; z-index:1; max-width:320px; margin:0; color:#aaa5a1; font-size:13px; line-height:1.7; }
+    .practice-tags { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:24px; }
+    .practice-tags span { padding:7px 9px; border:1px solid #ffffff20; border-radius:999px; color:#d7d1cc; font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
+    .practice-note { display:flex; align-items:center; gap:12px; margin:18px 0 0; color:#96908c; font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+    .practice-note::before { content:''; width:24px; height:1px; background:var(--red); }
+    .motion-ready .about-card .about-content > * { opacity:0; transform:translateY(12px); transition:opacity .55s cubic-bezier(.2,.75,.25,1),transform .55s cubic-bezier(.2,.75,.25,1); }
+    .motion-ready .about-card.is-visible .about-content > * { opacity:1; transform:translateY(0); }
+    .motion-ready .about-card.is-visible .about-content > :nth-child(1) { transition-delay:80ms; }
+    .motion-ready .about-card.is-visible .about-content > :nth-child(2) { transition-delay:140ms; }
+    .motion-ready .about-card.is-visible .about-content > :nth-child(3) { transition-delay:210ms; }
+    .motion-ready .about-card.is-visible .about-content > :nth-child(4) { transition-delay:300ms; }
+    .motion-ready .about-card .about-portrait img { opacity:0; transform:translate3d(-46px,0,0) scale(.94); transition:opacity .65s ease,transform .9s cubic-bezier(.18,.89,.32,1.18); }
+    .motion-ready .about-card.is-visible .about-portrait img { opacity:1; transform:translate3d(0,0,0) scale(1); transition-delay:100ms; }
+    .motion-ready .practice-card.reveal { opacity:0; transform:translate3d(0,58px,0) scale(.88) rotate(-2deg); transition:opacity .7s ease,transform .95s cubic-bezier(.18,.89,.32,1.18); transition-delay:var(--reveal-delay,0ms); }
+    .motion-ready .practice-card.reveal:nth-child(2) { transform:translate3d(0,58px,0) scale(.88) rotate(2deg); }
+    .motion-ready .practice-card.reveal.is-visible { opacity:1; transform:translate3d(0,0,0) scale(1) rotate(0); }
     .thanks { padding:clamp(56px,8vw,112px) 0 0; }
     .footer { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:20px 4px 0; color:#777; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
     .back-top { color:#bbb; text-decoration:none; }
@@ -142,25 +182,29 @@
     .viewer-prev { left:14px; }
     .viewer-next { right:14px; }
     .reveal { opacity:1; transform:none; }
-    .motion-ready .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.75,.25,1),transform .7s cubic-bezier(.2,.75,.25,1); }
+    .motion-ready .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.75,.25,1),transform .7s cubic-bezier(.2,.75,.25,1); transition-delay:var(--reveal-delay,0ms); }
     .motion-ready .reveal.is-visible { opacity:1; transform:translateY(0); }
+    .motion-ready .chapter-grid .slide.reveal { opacity:0; transform:translate3d(var(--fly-x,-42px),48px,0) scale(.95); transition:opacity .75s cubic-bezier(.2,.75,.25,1),transform .9s cubic-bezier(.18,.89,.32,1.18); transition-delay:var(--reveal-delay,0ms); }
+    .motion-ready .chapter-grid .slide.reveal.is-visible { opacity:1; transform:translate3d(0,0,0) scale(1); }
     @media (min-width:761px) and (max-width:1040px) {
       .site-header { padding-inline:24px; }
-      nav { gap:18px; }
+      nav { gap:1px; }
       main { padding-inline:18px; }
       .chapter { padding-top:68px; }
       .about-card { grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr); }
       .about-portrait { min-height:380px; }
       .about-content { padding:30px; }
       .about-details { grid-template-columns:1fr; align-items:start; }
+      .practice-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .practice-card:last-child { grid-column:1/-1; }
       .tools { justify-content:flex-start; }
       .about-tools-label { text-align:left; }
       .chapter-grid.two { grid-template-columns:1fr; }
     }
     @media (max-width:760px) {
       .site-header { align-items:flex-start; flex-direction:column; gap:4px; padding-block:12px 7px; }
-      nav { width:100%; gap:22px; }
-      nav a { padding:8px 0; }
+      nav { width:100%; justify-content:flex-start; gap:2px; }
+      nav a { min-height:32px; padding-inline:11px; }
       html { scroll-padding-top:104px; }
       .intro { min-height:calc(84svh - 92px); }
       .chapter-heading { align-items:flex-start; flex-direction:column; }
@@ -168,11 +212,15 @@
       .chapter-grid.two, .chapter-grid.three { grid-template-columns:1fr; }
       .chapter-grid.three .slide:last-child:nth-child(odd) { grid-column:auto; width:100%; }
       .about-card { grid-template-columns:1fr; }
+      .practice-grid { grid-template-columns:1fr; }
+      .practice-card { min-height:270px; }
+      .practice-card:last-child { grid-column:auto; }
       .about-portrait { min-height:300px; max-height:410px; }
       .about-portrait img { height:100%; max-height:410px; }
       .about-details { grid-template-columns:1fr; }
       .tools { justify-content:flex-start; }
       .about-tools-label { grid-column:1; margin-top:-17px !important; text-align:left; }
+      .about-tools-label { position:relative; top:12px; left:12px; grid-column:auto; margin-top:-17px !important; text-align:left; }
       .chapter { padding-top:60px; }
       .footer { align-items:flex-start; flex-direction:column; }
       .slide figcaption { opacity:1; transform:none; }
@@ -184,9 +232,10 @@
     }
     @media (max-width:420px) {
       main { padding-inline:9px; padding-bottom:28px; }
+      .intro { width:calc(100% + 18px); margin-inline:-9px; }
       .site-header { padding-inline:14px; }
-      nav { gap:18px; }
-      nav a { font-size:9px; }
+      nav { gap:1px; }
+      nav a { padding-inline:9px; font-size:8px; }
       .brand { font-size:11px; }
       .about-content { padding:22px 18px; }
       .about-portrait { min-height:270px; }
@@ -195,7 +244,14 @@
     }
     @media (hover:none) { .slide figcaption { opacity:1; transform:none; } }
     @media (max-height:520px) and (orientation:landscape) { .intro { min-height:calc(100svh - 62px); } .intro .slide { max-height:70svh; } .intro .slide img { max-height:70svh; } }
-    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; transition-delay:0ms !important; }
+      .intro .slide { animation:none !important; }
+      .intro::before, .intro .slide::before { animation:none !important; }
+      .motion-ready .chapter-grid .slide.reveal { transform:none; }
+      .motion-ready .about-card .about-portrait img, .motion-ready .practice-card.reveal { transform:none; }
+    }
       .cursor-orbit, .cursor-dot { display:none; }
     @media (hover:hover) and (pointer:fine) {
       .custom-cursor dialog, .custom-cursor dialog * { cursor:auto !important; }
@@ -208,16 +264,23 @@
       nav a:hover, nav a[aria-current="location"] { color:#fff; }
       nav a:hover::after, nav a[aria-current="location"]::after { transform:scaleX(1); }
       nav a:hover { letter-spacing:.17em; }
-      .slide, .video-card { transform-style:preserve-3d; }
+      .slide, .video-card, .practice-card { transform-style:preserve-3d; }
       .slide::after { background:radial-gradient(circle at var(--spot-x,50%) var(--spot-y,50%),#f1261d29,transparent 34%),linear-gradient(135deg,#f1261d12,transparent 40%,#ffffff08); }
       .slide:hover, .video-card:hover { transform:perspective(1100px) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg)) translateY(-5px); border-color:#a83b35; box-shadow:0 26px 64px #000b,0 0 0 1px #f1261d38,0 0 40px #f1261d12; }
+      .motion-ready .chapter-grid .slide.reveal.is-visible:hover { transform:perspective(1100px) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg)) translateY(-5px); border-color:#a83b35; box-shadow:0 26px 64px #000b,0 0 0 1px #f1261d38,0 0 40px #f1261d12; }
+      .practice-card:hover { transform:perspective(1100px) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg)) translateY(-5px); border-color:#a83b35; box-shadow:0 26px 64px #000b,0 0 0 1px #f1261d38,0 0 40px #f1261d12; }
+      .motion-ready .practice-card.reveal.is-visible:hover { transform:perspective(1100px) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg)) translateY(-5px); border-color:#a83b35; box-shadow:0 26px 64px #000b,0 0 0 1px #f1261d38,0 0 40px #f1261d12; }
+      .practice-card:hover::after { transform:scaleX(1); }
+      .practice-card:hover::before { opacity:1; }
+      .practice-card:hover .practice-index { color:#f06a60; }
       .video-card::before { content:''; position:absolute; z-index:1; inset:0; pointer-events:none; opacity:0; background:radial-gradient(circle at var(--spot-x,50%) var(--spot-y,50%),#f1261d35,transparent 42%); transition:opacity .35s; }
       .video-card:hover::before { opacity:1; }
       .video-card figcaption { z-index:2; }
       .about-card { transition:transform .4s cubic-bezier(.2,.75,.25,1),border-color .35s,box-shadow .4s; }
       .about-card:hover { transform:translateY(-5px); border-color:#a83b35; box-shadow:0 22px 54px #0006,0 0 30px #f1261d10; }
-      .about-portrait img { transition:transform .65s cubic-bezier(.2,.75,.25,1),filter .45s; }
+      .about-portrait img { transition:transform .8s cubic-bezier(.18,.89,.32,1.18),filter .45s,opacity .65s ease; }
       .about-card:hover .about-portrait img { transform:scale(1.035); filter:saturate(1.08); }
+      .motion-ready .about-card.is-visible:hover .about-portrait img { transform:scale(1.035); filter:saturate(1.08); }
       .tool { transition:transform .3s cubic-bezier(.2,.75,.25,1),box-shadow .3s,border-color .3s; }
       .tool:hover { transform:translateY(-6px) rotate(-4deg); border-color:#f1261d88; box-shadow:0 10px 24px #1d0a0930; }
       .tool:nth-child(even):hover { transform:translateY(-6px) rotate(4deg); }
@@ -258,22 +321,42 @@
         </div>
       </article>
       <div class="chapter-heading" style="padding-top:clamp(38px,6vw,72px)"><div><p class="eyebrow">02 — Practice</p><h2>What I do</h2></div><p class="chapter-note">From product interfaces to identity systems and visual campaigns.</p></div>
-      <div class="chapter-grid"><figure class="slide" tabindex="0" role="button" aria-label="Open services and skills slide"><img loading="lazy" src="assets/slides/slide-03.png" alt="Services and skills: UI/UX design, branding, graphic and social media design, development, and visual design"><figcaption>03 / Services &amp; skills</figcaption></figure></div>
+      <div class="practice-grid" aria-label="Design practice areas">
+        <article class="practice-card reveal">
+          <div class="practice-card-top"><span class="practice-index">01</span><span class="eyebrow">Experience · interaction</span></div>
+          <h3>UI/UX <em>design</em></h3>
+          <p>Turning ideas into clear, intuitive digital experiences through thoughtful flows, wireframes, and interface design.</p>
+          <div class="practice-tags"><span>UX design</span><span>UI design</span></div>
+        </article>
+        <article class="practice-card reveal">
+          <div class="practice-card-top"><span class="practice-index">02</span><span class="eyebrow">Identity · visual systems</span></div>
+          <h3>Branding</h3>
+          <p>Building distinctive visual identities with a considered mix of typography, color, and art direction.</p>
+          <div class="practice-tags"><span>Branding</span><span>Visual design</span></div>
+        </article>
+        <article class="practice-card reveal">
+          <div class="practice-card-top"><span class="practice-index">03</span><span class="eyebrow">Campaigns · culture</span></div>
+          <h3>Graphic <em>&amp; social</em></h3>
+          <p>Creating expressive campaign and social media graphics that bring an idea to life across formats.</p>
+          <div class="practice-tags"><span>Graphic design</span><span>Social media</span></div>
+        </article>
+      </div>
+      <p class="practice-note">UX · UI · Development · Branding · Visual design</p>
     </section>
 
     <section class="chapter" id="branding">
       <div class="chapter-heading"><div><p class="eyebrow">02 — Identity systems</p><h2>Branding</h2></div><p class="chapter-note">Two identity explorations, shown through their marks, applications, and visual systems.</p></div>
-      <div class="chapter-grid two"><figure class="slide" tabindex="0" role="button" aria-label="Open JACKS brand identity slide"><img loading="lazy" src="assets/slides/slide-04.png" alt="JACKS clothing brand identity: blue grid, apparel mockups and design tools"><figcaption>04 / JACKS · identity</figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open JACKS logo slide"><img loading="lazy" src="assets/slides/slide-05.png" alt="JACKS brand logo on a black grid with collage elements"><figcaption>05 / JACKS · mark</figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open GAMEON brand identity slide"><img loading="lazy" src="assets/slides/slide-06.png" alt="GAMEON sports brand identity: apparel, logo and design tools on a green grid"><figcaption>06 / GAMEON · identity</figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open GAMEON logo slide"><img loading="lazy" src="assets/slides/slide-07.png" alt="GAMEON logo on a black grid with retro collage elements"><figcaption>07 / GAMEON · mark</figcaption></figure></div>
+      <div class="chapter-grid two"><figure class="slide slide-project" tabindex="0" role="button" aria-label="Open JACKS brand identity slide"><img loading="lazy" src="assets/slides/slide-04.png" alt="JACKS clothing brand identity: blue grid, apparel mockups and design tools"><figcaption><span>04 / JACKS · identity</span><a class="slide-project-link" href="https://www.behance.net/gallery/253947785/JACKS" target="_blank" rel="noopener noreferrer">View ↗</a></figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open JACKS logo slide"><img loading="lazy" src="assets/slides/slide-05.png" alt="JACKS brand logo on a black grid with collage elements"><figcaption>05 / JACKS · mark</figcaption></figure><figure class="slide slide-project" tabindex="0" role="button" aria-label="Open GAMEON brand identity slide"><img loading="lazy" src="assets/slides/slide-06.png" alt="GAMEON sports brand identity: apparel, logo and design tools on a green grid"><figcaption><span>06 / GAMEON · identity</span><a class="slide-project-link" href="https://www.behance.net/gallery/250201027/GAMEON" target="_blank" rel="noopener noreferrer">View ↗</a></figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open GAMEON logo slide"><img loading="lazy" src="assets/slides/slide-07.png" alt="GAMEON logo on a black grid with retro collage elements"><figcaption>07 / GAMEON · mark</figcaption></figure></div>
     </section>
 
     <section class="chapter" id="uiux">
       <div class="chapter-heading"><div><p class="eyebrow">03 — Product experience</p><h2>UI/UX design</h2></div><p class="chapter-note">GAMEON is a sports platform concept for discovering games, booking venues, connecting with players, and joining tournaments.</p></div>
-      <div class="chapter-grid"><figure class="slide" tabindex="0" role="button" aria-label="Open GAMEON product overview slide"><img loading="lazy" src="assets/slides/slide-08.png" alt="GAMEON product overview with app home screen, typography and color palette"><figcaption>08 / GAMEON · product overview</figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open GAMEON app flow slide"><img loading="lazy" src="assets/slides/slide-09.png" alt="GAMEON mobile app flow: welcome, sign in, sport selection, marketplace and game booking"><figcaption>09 / GAMEON · app flow</figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open GAMEON checkout and booking slide"><img loading="lazy" src="assets/slides/slide-10.png" alt="GAMEON checkout, delivery tracking and team registration mobile screens"><figcaption>10 / GAMEON · checkout and booking</figcaption></figure></div>
+      <div class="chapter-grid"><figure class="slide slide-project" tabindex="0" role="button" aria-label="Open GAMEON product overview slide"><img loading="lazy" src="assets/slides/slide-08.png" alt="GAMEON product overview with app home screen, typography and color palette"><figcaption><span>08 / GAMEON · product overview</span><a class="slide-project-link" href="https://www.behance.net/gallery/252266275/GAMEON" target="_blank" rel="noopener noreferrer">View ↗</a></figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open GAMEON app flow slide"><img loading="lazy" src="assets/slides/slide-09.png" alt="GAMEON mobile app flow: welcome, sign in, sport selection, marketplace and game booking"><figcaption>09 / GAMEON · app flow</figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open GAMEON checkout and booking slide"><img loading="lazy" src="assets/slides/slide-10.png" alt="GAMEON checkout, delivery tracking and team registration mobile screens"><figcaption>10 / GAMEON · checkout and booking</figcaption></figure></div>
     </section>
 
     <section class="chapter" id="graphic">
       <div class="chapter-heading"><div><p class="eyebrow">04 — Posters &amp; campaigns</p><h2>Graphic design</h2></div><p class="chapter-note">Poster work across film, culture, sport, and event campaigns.</p></div>
-      <div class="chapter-grid three"><figure class="video-card reveal"><video controls playsinline preload="metadata" aria-label="Charan Billava design motion video"><source src="assets/designer-motion.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>11 / Motion study</figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open graphic design poster series slide"><img loading="lazy" src="assets/slides/slide-15.png" alt="Poster series including No Maps Just Tides, Karma, King of My Area, Kaira, and Peace"><figcaption>12 / Poster series</figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open event poster series slide"><img loading="lazy" src="assets/slides/slide-13.png" alt="Graphic design posters for Onam, Ride, Self Control and a Kannada sports event"><figcaption>13 / Events &amp; culture</figcaption></figure></div>
+      <div class="chapter-grid three"><figure class="video-card reveal"><video controls playsinline preload="metadata" aria-label="Charan Billava design motion video"><source src="assets/designer-motion.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>11 / Motion study</figcaption></figure><figure class="slide slide-project" tabindex="0" role="button" aria-label="Open graphic design poster series slide"><img loading="lazy" src="assets/slides/slide-15.png" alt="Poster series including No Maps Just Tides, Karma, King of My Area, Kaira, and Peace"><figcaption><span>12 / Poster series</span><a class="slide-project-link" href="https://www.behance.net/gallery/257029295/GRAPHIC-DESIGNS" target="_blank" rel="noopener noreferrer">View ↗</a></figcaption></figure><figure class="slide" tabindex="0" role="button" aria-label="Open event poster series slide"><img loading="lazy" src="assets/slides/slide-13.png" alt="Graphic design posters for Onam, Ride, Self Control and a Kannada sports event"><figcaption>13 / Events &amp; culture</figcaption></figure></div>
     </section>
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
@@ -332,7 +415,16 @@
       slide.addEventListener('click', () => openSlide(index));
       slide.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openSlide(index); } });
     });
+    document.querySelectorAll('.slide-project-link').forEach((link) => {
+      link.addEventListener('click', (event) => event.stopPropagation());
+      link.addEventListener('keydown', (event) => event.stopPropagation());
+    });
     document.querySelectorAll('.chapter-heading, .about-card, .video-card, .footer').forEach((item) => item.classList.add('reveal'));
+    document.querySelectorAll('.practice-card').forEach((item, index) => item.style.setProperty('--reveal-delay', `${index * 110}ms`));
+    document.querySelectorAll('.chapter-grid .slide').forEach((item, index) => {
+      item.style.setProperty('--fly-x', index % 2 ? '48px' : '-48px');
+      item.style.setProperty('--reveal-delay', `${index % 3 * 90}ms`);
+    });
     viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
     viewer.querySelector('.viewer-prev').addEventListener('click', () => showSlide(currentSlide - 1));
     viewer.querySelector('.viewer-next').addEventListener('click', () => showSlide(currentSlide + 1));
@@ -385,7 +477,7 @@
         cursorRing.classList.add('is-ready');
         cursorDot.classList.add('is-ready');
         if (!animationFrame) animationFrame = requestAnimationFrame(animateTrail);
-        const card = event.target instanceof Element ? event.target.closest('.slide,.video-card') : null;
+        const card = event.target instanceof Element ? event.target.closest('.slide,.video-card,.practice-card') : null;
         if (card) {
           const rect = card.getBoundingClientRect();
           const x = (event.clientX - rect.left) / rect.width;
@@ -401,7 +493,7 @@
           cursorRing.classList.remove('is-ready');
           cursorDot.classList.remove('is-ready');
         }
-        const card = event.target instanceof Element ? event.target.closest('.slide,.video-card') : null;
+        const card = event.target instanceof Element ? event.target.closest('.slide,.video-card,.practice-card') : null;
         if (card && !card.contains(event.relatedTarget)) {
           card.style.removeProperty('--tilt-x');
           card.style.removeProperty('--tilt-y');
