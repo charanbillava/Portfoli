@@ -18,9 +18,9 @@
     @media(max-width:800px){.process-phases{justify-content:flex-start}.screens-head{margin-top:52px}}
     .process-phases{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;max-width:440px}.process-phases span{padding:9px 12px;border:1px solid var(--line);color:#d8d9d5;font:500 11px var(--display);letter-spacing:.04em}.screens-head{margin-top:72px}
     /* Keep all 22 case-study frames in a consistent, ordered grid. */
-    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start;column-count:initial}
+    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row;gap:22px;align-items:start;column-count:initial}
     .frame{display:block;width:100%;margin:0;break-inside:auto}
-    .frame img{min-height:0;object-fit:contain;background:#080909}
+    .frame img{aspect-ratio:16/10;min-height:0;object-fit:contain;background:#080909}
     @media(max-width:540px){.gallery{grid-template-columns:1fr;gap:16px}.frame{margin:0}}
   </style>
 </head>
@@ -61,6 +61,7 @@
       ['21','Play, connect, complete','21','prototype'],
       ['22','Thank you','22','closing']
     ];
+    frames.sort((a,b)=>Number(a[0])-Number(b[0]));
     const gallery=document.querySelector('.gallery');
     gallery.innerHTML=frames.map(([n,title,file,phase],i)=>`<figure class="frame reveal" tabindex="0" role="button" aria-label="Open frame ${n}: ${title}" data-index="${i}"><img src="assets/gameon/case-study-${file}.webp" alt="GAMEON ${title.toLowerCase()} presentation slide" loading="lazy" decoding="async"><figcaption><span>${n} / ${title}</span><span>${phase}</span></figcaption></figure>`).join('');
     const lightbox=document.querySelector('.lightbox'), lightboxImage=lightbox.querySelector('img'), lightboxLabel=lightbox.querySelector('.lightbox-label');let active=0,returnFocus=null;
