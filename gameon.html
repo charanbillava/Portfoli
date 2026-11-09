@@ -17,6 +17,11 @@
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
     @media(max-width:800px){.process-phases{justify-content:flex-start}.screens-head{margin-top:52px}}
     .process-phases{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;max-width:440px}.process-phases span{padding:9px 12px;border:1px solid var(--line);color:#d8d9d5;font:500 11px var(--display);letter-spacing:.04em}.screens-head{margin-top:72px}
+    /* Keep all 22 case-study frames in a consistent, ordered grid. */
+    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start;column-count:initial}
+    .frame{display:block;width:100%;margin:0;break-inside:auto}
+    .frame img{min-height:0;object-fit:contain;background:#080909}
+    @media(max-width:540px){.gallery{grid-template-columns:1fr;gap:16px}.frame{margin:0}}
   </style>
 </head>
 <body>
